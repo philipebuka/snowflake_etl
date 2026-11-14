@@ -7,7 +7,7 @@ services:
 
     container_name: dbt_snowflake
 
-    working_dir: /usr/app/dbt-project
+    working_dir: /usr/app/dbt-project/snowflake_etl
 
     volumes:
       - ./dbt-project:/usr/app/dbt-project
