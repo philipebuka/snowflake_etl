@@ -1,0 +1,23 @@
+
+services:
+  dbt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: dbt_snowflake
+
+    working_dir: /usr/app/dbt-project
+
+    volumes:
+      - ./dbt-project:/usr/app/dbt-project
+      - ./.dbt:/root/.dbt
+      - ./rsa_key.p8:/root/.ssh/rsa_key.p8:ro
+
+    env_file:
+      - .env
+
+    entrypoint: ["dbt"]
+
+    tty: true
+    stdin_open: true

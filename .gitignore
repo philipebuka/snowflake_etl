@@ -6,3 +6,11 @@ __pycache__/
 .venv
 *.p8
 *.pub
+# dbt
+.dbt/
+dbt-project/target/
+dbt-project/logs/
+dbt-project/dbt_packages/
+
+# Secrets
+.secrets/
